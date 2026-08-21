@@ -69,6 +69,28 @@ curl -X POST http://localhost:4104/api/reports \
         style="border:0;width:100%;height:640px"></iframe>
 ```
 
+**Any stack, no iframe** — one script tag:
+
+```html
+<script src="http://localhost:4104/fusion-client.js"></script>
+<script>
+  const fusion = Fusion.connect({
+    baseUrl: 'http://localhost:4104',
+    onIncident: (e) => console.log(e.isNew ? 'new' : 'corroborated', e.incident.id),
+    onQuarantine: (e) => console.warn('held for review:', e.reasons),
+  })
+
+  fusion.submit({
+    text: 'Smoke near the library',
+    lat: 20.3536, lng: 85.8195,
+    category: 'fire', reporterToken: 'student-4471',
+  }).then((r) => console.log(r.corroborationCount, r.confidence))
+</script>
+```
+
+`Fusion.connect()` also exposes `incidents(status)`, `reportsFor(incidentId)`
+and `flags()`, and `disconnect()` closes the stream.
+
 **React** — copy the single self-contained file `src/components/embed/FusionEmbed.tsx` into your app (no dependencies beyond React, inline-styled, CORS already open):
 
 ```tsx
