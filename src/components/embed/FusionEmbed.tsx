@@ -37,25 +37,25 @@ export interface FusionEmbedProps {
 
 /** The AEGIS severity palette — sacred across every module. */
 const SEVERITY_COLOR: Record<EmbedSeverity, string> = {
-  P0: '#ef4444',
-  P1: '#f97316',
-  P2: '#eab308',
-  P3: '#38bdf8',
+  P0: '#ff453a',
+  P1: '#ff9f0a',
+  P2: '#ffd60a',
+  P3: '#a78bfa',
 }
 
 const styles: Record<string, CSSProperties> = {
   root: {
-    background: '#0a0e17',
-    border: '1px solid #1f2937',
+    background: '#0d0c13',
+    border: '1px solid #272437',
     borderRadius: 8,
-    color: '#e5e7eb',
+    color: '#ededf4',
     fontFamily: 'ui-sans-serif, system-ui, sans-serif',
     padding: 12,
   },
   title: { fontSize: 10, fontWeight: 700, letterSpacing: '0.08em', margin: 0 },
   card: {
-    background: '#121826',
-    border: '1px solid #1f2937',
+    background: '#14131d',
+    border: '1px solid #272437',
     borderRadius: 6,
     marginTop: 8,
     padding: 10,
@@ -64,15 +64,15 @@ const styles: Record<string, CSSProperties> = {
     fontSize: 13, fontWeight: 600, margin: 0,
     overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap',
   },
-  meta: { color: '#8b95a7', fontFamily: 'ui-monospace, monospace', fontSize: 10, marginTop: 4 },
+  meta: { color: '#9b98ad', fontFamily: 'ui-monospace, monospace', fontSize: 10, marginTop: 4 },
   barTrack: {
-    background: '#0a0e17', borderRadius: 999, height: 5, marginTop: 8, overflow: 'hidden',
+    background: '#0d0c13', borderRadius: 999, height: 5, marginTop: 8, overflow: 'hidden',
   },
   barFill: {
-    background: '#38bdf8', borderRadius: 999, height: '100%',
+    background: '#a78bfa', borderRadius: 999, height: '100%',
     transformOrigin: 'left', transition: 'transform 0.7s ease-out',
   },
-  empty: { color: '#8b95a7', fontSize: 11, padding: '16px 0', textAlign: 'center' },
+  empty: { color: '#9b98ad', fontSize: 11, padding: '16px 0', textAlign: 'center' },
 }
 
 export function FusionEmbed({ baseUrl, maxIncidents = 6 }: FusionEmbedProps) {
