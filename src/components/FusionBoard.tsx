@@ -19,7 +19,7 @@ export function FusionBoard() {
 
   return (
     <div className="grid gap-4 lg:grid-cols-[minmax(0,1.45fr)_minmax(0,1fr)]">
-      <section>
+      <section className="min-w-0">
         <h2 className="text-[10px] font-bold tracking-wider uppercase">
           Active incidents{' '}
           <span className="font-mono font-normal text-ops-muted">{active.length}</span>
